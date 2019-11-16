@@ -1,12 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 
-import MarkdownURLViewer from './MarkdownURLViewer';
+import MarkdownURLLoader from './MarkdownURLLoader';
+import { isValidUrl } from './helpers';
 
-const App = () => (
-  <Router>
-    <MarkdownURLViewer />
-  </Router>
-);
+const App = () => {
+  const location = useLocation();
+  const search = queryString.parse(location.search);
+  const { url } = search;
+
+  if (isValidUrl(url)) {
+    return <MarkdownURLLoader url={url} />;
+  } else {
+    return 'You must provide a "url" query parameter with a valid URL.';
+  }
+};
 
 export default App;
