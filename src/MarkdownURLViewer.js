@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const MarkdownURLViewer = props => {
-  return <code>{props.content}</code>;
+  return <ReactMarkdown source={props.content} />;
 };
 
 export default MarkdownURLViewer;
