@@ -1,7 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
-  return <>Markdown viewer</>;
-}
+import MarkdownURLViewer from './MarkdownURLViewer';
+
+const App = () => (
+  <Router>
+    <MarkdownURLViewer />
+  </Router>
+);
 
 export default App;
