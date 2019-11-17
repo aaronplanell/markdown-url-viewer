@@ -22,9 +22,8 @@ const MarkdownURLLoader = props => {
 
   if (!content) {
     return <>Loading...</>;
-  } else {
-    return <MarkdownURLViewer content={content} />;
   }
+  return <MarkdownURLViewer content={content} />;
 };
 
 export default MarkdownURLLoader;
