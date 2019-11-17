@@ -1,5 +1,4 @@
-export const isValidUrl = path => {
-  // eslint-disable-next-line
-  const reg = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._–—~–:/?#[\]@!\$&%'\(\)\*\+,;=.]+$/g;
-  return reg.test(path);
-};
+// eslint-disable-next-line
+const REGEX_URL = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._–—~–:/?#[\]@!\$&%'\(\)\*\+,;=.]+$/g;
+
+export const isValidUrl = path => REGEX_URL.test(path);

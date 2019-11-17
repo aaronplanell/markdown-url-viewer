@@ -8,8 +8,7 @@ import { isValidUrl } from './helpers';
 
 const App = () => {
   const location = useLocation();
-  const search = queryString.parse(location.search);
-  const { url } = search;
+  const { url } = queryString.parse(location.search);
 
   if (isValidUrl(url)) {
     return <MarkdownURLLoader url={url} />;
